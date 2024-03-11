@@ -10,6 +10,15 @@ public class BasketController : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+    void OnTriggerEnter(Collider other) {
+        if(other.CompareTag("Apple")) {
+            Debug.Log("Tag = Apple");
+        } else {
+            Debug.Log("Tag = Bomb");
+        }
+        Destroy(other.gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
